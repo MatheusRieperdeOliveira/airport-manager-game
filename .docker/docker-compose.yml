@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: front_docker
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../:/var/www:cached
+    stdin_open: true
+    tty: true
